@@ -23,6 +23,10 @@ help:
 
 .DEFAULT_GOAL := build
 
+base:
+	    @docker build --pull -t ${IMAGEBASE} -f Dockerfile.base .
+	    @docker push ${IMAGEBASE}
+
 build:
 	    @docker build --pull -t ${IMAGEFULLNAME} -f Dockerfile .
 	    @docker tag ${IMAGEFULLNAME} ${IMAGELATEST}
