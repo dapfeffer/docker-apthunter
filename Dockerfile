@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM dapfeffer/apthunter:base
 
 WORKDIR /opt
 

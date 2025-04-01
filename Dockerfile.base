@@ -1,0 +1,5 @@
+FROM ubuntu
+
+RUN echo "Etc/UTC" > /etc/timezone
+RUN apt update && apt -y install tzdata && dpkg-reconfigure --frontend noninteractive tzdata && apt -y upgrade && apt -y install zsh git python3 python3-pip gpg p7zip-full vim jq
+RUN apt clean
